@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <GridLayout
+        android:layout_marginTop="35dp"
+        android:id="@+id/info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/inic"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="ФИО"
+            android:inputType="textCapWords"/>
+
+        <EditText
+            android:id="@+id/vozr"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Возраст"
+            android:inputType="number"/>
+
+        <EditText
+            android:id="@+id/telephon"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Телефон"
+            android:inputType="phone"/>
+
+        <EditText
+            android:id="@+id/posts"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Электронная почта"
+            android:inputType="textWebEmailAddress"/>
+    </GridLayout>
+
+    <TextView
+        android:id="@+id/textt"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        app:layout_constraintBottom_toTopOf="@id/animal"
+        app:layout_constraintTop_toBottomOf="@id/info"
+        android:text="Любимые животные"
+        android:gravity="center"
+        android:textSize="20dp"/>
+
+    <LinearLayout
+        android:id="@+id/animal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/textt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Кошки"
+            android:layout_marginEnd="10dp"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Собаки"
+            android:layout_marginEnd="10dp"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Кролики"
+            android:layout_marginEnd="10dp"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Попугаи"/>
+    </LinearLayout>
+
+<GridLayout
+    android:id="@+id/obsh"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toBottomOf="@id/animal"
+    android:orientation="horizontal">
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/obsh">
+    <RadioGroup
+        android:id="@+id/zp"
+        android:checkedButton="@id/zpshka">
+
+        <RadioButton
+            android:id="@+id/zpshka"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Работаете волонтером" />
+        <RadioButton
+            android:id="@+id/volonter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Получаете зарплату" />
+    </RadioGroup>
+
+    </GridLayout>
+
+    <GridLayout
+        android:id="@+id/zapa"
+        android:layout_height="74dp">
+
+    </GridLayout>
+
+    <EditText
+        android:id="@+id/hochet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:hint="Желаемая зарплата"
+        android:imeOptions="actionDone"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:visibility="invisible"/>
+</GridLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
